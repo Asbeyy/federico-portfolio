@@ -50,9 +50,9 @@ const controls = new OrbitControls( camera, renderer.domElement );
 function checkDevice(){
   if (window.innerWidth <= 650){
     //Phone Settings
-    camera.position.z = 5
+    camera.position.z = 4
     camera.position.x = 0
-    camera.position.y = 0.9
+    camera.position.y = 0.6
   } else {
     //Desktop view settings
     camera.position.z = 4;
