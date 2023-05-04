@@ -15,6 +15,7 @@
   "dependencies": {
     "@tweenjs/tween.js": "^20.0.3",
     "three": "^0.152.2",
-    "three-css2drender": "^1.0.0"
+    "three-css2drender": "^1.0.0",
+    "vanilla-tilt": "^1.8.0"
   }
 }

@@ -23,9 +23,16 @@ body{
   width: 100%;
 }
 
+
+.copy-container{
+  min-height: 100%;
+  width: 100%;
+}
+
 .gr{
   margin-top: 100px;
-  background: linear-gradient( #bfc8de , #ffffff)
+  background: linear-gradient( #bfc8de , rgba(103, 99, 188, 0.536), #ffffff) 
+
 }
 
 .br{
@@ -62,9 +69,71 @@ body{
 }
 
 
+.box-one{
+  min-height: 400px;
+  position: relative;
+  top: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: -120px;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+
+}
+
+.card{
+  height: 460px;
+  width: 350px;
+  background-color: rgba(39, 39, 39, 0.841);
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ffffff;
+
+  background: none;
+  backdrop-filter: blur(20px);
+}
 
 
+.button{
+  width: 100px;
+  height: 50rem;
+  background-color: yellowgreen;
+}
 
+.more{
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  border-radius: 20px;
+  width: 300px;
+  border: none;
+  text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  transition: 800ms ;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: rgba(2, 2, 107, 0.695);
+}
+
+.more:hover{
+}
+
+
+.line{
+  position: relative;
+  left: 10%;
+  width:250px;
+  height: 250px;
+  background-color: rgb(6, 6, 6);
+  transform: translateY(300px) rotate(15deg);
+  border-radius: 20px;
+  z-index: -99;
+}
 
 
 
@@ -97,6 +166,7 @@ body{
     font-size: 55px;
   }
   
+  .line{display: none;}
 }
 
 
@@ -122,6 +192,8 @@ body{
   .phrase-two{
     font-size: 57.5px;
   }
+
+  .line{display: none;}
   
 }
 
