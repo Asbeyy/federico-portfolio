@@ -68,9 +68,9 @@ animate()
 
 
 function onWindowResize() {
-  // if (window.innerWidth <= 650){
-  //   return
-  // }
+  if (window.innerWidth <= 650){
+    return
+  }
   checkDevice()
   console.log("resize happening")
   camera.aspect = window.innerWidth / window.innerHeight;
