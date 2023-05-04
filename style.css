@@ -6,7 +6,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(191, 200, 222);
+  background-color: #bfc8de;
   font-family: 'Maven Pro', sans-serif;
 }
 
@@ -25,11 +25,11 @@ body{
 
 .gr{
   margin-top: 100px;
-  background-color: red
+  background: linear-gradient( #bfc8de , #ffffff)
 }
 
 .br{
-  background-color: bisque;
+  background-color: white;
 }
 
 
