@@ -30,19 +30,36 @@ body{
 }
 
 .gr{
-  margin-top: 100px;
-  background: linear-gradient( #bfc8de , rgba(103, 99, 188, 0.536), #ffffff) 
+  display: flex;
+  margin-top: -25%;
+  flex-direction: row;
+  background: linear-gradient( #bfc8de , rgba(103, 99, 188, 0.536)) 
 
 }
 
 .br{
-  background-color: white;
+  background-color: rgba(103, 99, 188, 0.536)
 }
 
 .contrast-color{
   color: rgba(220, 9, 9, 0.291);
   font-weight: bold ;
 }
+
+.vertical-line{
+  position: relative;
+  left: 10%;
+  width:1500px;
+  height: 10px;
+  background-color: rgb(3, 3, 3);
+  transform: translateY(40px) translateX(-230px) rotate(90deg);
+  border-radius: 20px;
+  z-index: -99;
+  filter: blur(10px);
+}
+
+
+
 
 .cont-cont{
   height: 140px;
@@ -116,7 +133,7 @@ body{
   border: none;
   text-align: center;
   padding: 20px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(15px);
   transition: 800ms ;
   color: white;
   font-size: 20px;
@@ -141,6 +158,27 @@ body{
   transform: translateY(300px) rotate(15deg);
   border-radius: 20px;
   z-index: -99;
+}
+
+
+
+.dropdown-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.vertical-line-two{
+  width:8px;
+  height:600px;
+  background-color: rgba(3, 3, 3, 0.505);
+  border: solid rgba(248, 248, 248, 0.834) 2px;
+  border-radius: 20px;
+  z-index: 100;
+}
+
+.personal-info{
+  width: 90%;
 }
 
 
@@ -187,8 +225,11 @@ body{
   .phrase-two{
     font-size: 55px;
   }
+
+ 
   
   .line{display: none;}
+  .vertical-line{display: none;}
 }
 
 
@@ -224,7 +265,10 @@ body{
     font-size: 57.5px;
   }
 
+
+
   .line{display: none;}
+  .vertical-line{display: none;}
   
 }
 
@@ -267,6 +311,7 @@ body{
   .phrase-two{
     font-size: 66px;
   }
+ 
 }
 
 
