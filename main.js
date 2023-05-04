@@ -28,6 +28,8 @@ const renderer = new WebGLRenderer({
   alpha: true
 })
 renderer.setSize(screen.width,screen.height);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement)
 
 
@@ -45,6 +47,7 @@ const materialMatcap = new THREE.MeshMatcapMaterial({
 })
 
 const torus = new THREE.Mesh(thorusGeometry,materialMatcap)
+torus.castShadow = true; // Enable self-shadowing
 scene.add(torus)
 
 
