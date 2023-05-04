@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap');
+
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(191, 200, 222);
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.pagefront{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% ;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+}
+
+.gr{
+  margin-top: 100px;
+  background-color: red
+}
+
+.br{
+  background-color: bisque;
+}
+
+
+.cont-cont{
+  height: 140px;
+  margin-left: calc(-400px - 6vw);
+  margin-right: 30px;
+  margin-top: 70px;
+  position: relative;
+  top: calc(50% - 140px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.name{
+  font-size: 85px;
+}
+
+.phrase{
+  margin-top: 20px ;
+  font-size: 35.6px;
+}
+
+.phrase-two{
+  font-size: 72px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:400px) {
+  .cont-cont{
+    scale: 0.79;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 60px;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    color: white;
+  }
+
+  .name{
+    font-size: 67px;
+  }
+  
+  .phrase{
+    margin-top: 20px ;
+    font-size: 27px;
+  }
+  .phrase-two{
+    font-size: 55px;
+  }
+  
+}
+
+
+@media (min-width:400px) and (max-width:650px) {
+  .cont-cont{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: calc(120px + 2vw);
+    position: relative;
+    top: 30px;
+    text-align: center;
+  }
+
+  .name{
+    font-size: 69px;
+  }
+  
+  .phrase{
+    margin-top: 20px ;
+    font-size: 28px;
+  }
+
+  .phrase-two{
+    font-size: 57.5px;
+  }
+  
+}
+
+
+
+@media (min-width:650px) and (max-width:900px) {
+  .cont-cont{
+    height: 140px;
+  margin-left: calc(-180px - 1vw);
+  margin-right: 30px;
+  margin-top: 70px;
+  position: relative;
+  top: calc(50% - 140px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  }
+  
+  .name{
+    font-size: 80px;
+  }
+  
+  .phrase{
+    margin-top: 20px ;
+    font-size: 32.5px;
+  }
+  
+  .phrase-two{
+    font-size: 66px;
+  }
+}
+
+
