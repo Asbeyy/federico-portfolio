@@ -31,8 +31,7 @@ body{
 
 .gr{
   display: flex;
-  margin-top: -25%;
-  flex-direction: row;
+  flex-direction: column;
   background: linear-gradient( #bfc8de , rgba(103, 99, 188, 0.536)) 
 
 }
@@ -172,15 +171,25 @@ body{
   width:8px;
   height:600px;
   background-color: rgba(3, 3, 3, 0.505);
-  border: solid rgba(248, 248, 248, 0.834) 2px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+  position: relative;
   z-index: 100;
 }
 
 .personal-info{
-  width: 90%;
+  width: 60%;
 }
 
+
+.title-main{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: rgba(253, 253, 253, 0.532);
+}
 
 
 
@@ -214,6 +223,11 @@ body{
     color: white;
   }
 
+  .gr{
+
+    margin-top: -25%;
+  }
+
   .name{
     font-size: 67px;
   }
@@ -224,6 +238,10 @@ body{
   }
   .phrase-two{
     font-size: 55px;
+  }
+
+  .personal-info{
+    width: 90%;
   }
 
  
@@ -263,6 +281,10 @@ body{
 
   .phrase-two{
     font-size: 57.5px;
+  }
+
+  .personal-info{
+    width: 80%;
   }
 
 
