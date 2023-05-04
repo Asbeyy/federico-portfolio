@@ -229,6 +229,16 @@ header{
 
 @media (max-width:400px) {
 
+  header{
+    width: 100%;
+    display: flex;
+    padding-left: 0px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+  }
+
   .more{
     margin-top: 55px;
     border-radius: 12px;

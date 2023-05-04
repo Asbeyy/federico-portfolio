@@ -6,6 +6,19 @@ import VanillaTilt from 'vanilla-tilt';
 // import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 // import * as TWEEN from '@tweenjs/tween.js'
 
+
+
+//TODO ---- SETTINGS ----
+
+
+let setting = {
+  torus_rotation: 0.003
+}
+
+//TODO ---- END OF SETTINGS ----
+
+
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   45,screen.width/screen.height,0.1,1000
@@ -107,7 +120,7 @@ window.addEventListener("keydown",(e) => {
   if(e.key === "p"){
     console.log("TRIGGER")
     camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 2000);
+    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
     document.getElementById('pagefront').style.zIndex = "-999"
   }
 })
@@ -117,7 +130,7 @@ window.addEventListener("keydown",(e) => {
   if(e.key === "o"){
     console.log("NOT-TRIGGER")
     camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,checkerCamPos(), 2000);
+    moveCameraSmoothly(camera,checkerCamPos(), 900);
     document.getElementById('pagefront').style.zIndex = "999"
   }
 })
@@ -146,7 +159,7 @@ function moveCameraSmoothly(camera, newPosition, duration) {
 function checkerCamPos(){
   if (window.innerWidth <= 650){
     //Phone Settings
-    return { z: 5, x: 0, y: 0.9}
+    return { z: 4, x: 0, y: 0.6}
   } else {
     //Desktop view settings
     return { z: 4, x: -0.8, y: 0}
@@ -165,7 +178,7 @@ const playButton = document.getElementById('play')
 playButton.addEventListener("click",()=>{
   console.log("Playing..")
     camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 2000);
+    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
     document.getElementById('pagefront').style.zIndex = "-999"
 })
 
@@ -178,7 +191,7 @@ playButton.addEventListener("click",()=>{
 function animate(){
   window.requestAnimationFrame(animate)
   renderer.render(scene,camera)
-  torus.rotation.y += 0.01
+  torus.rotation.y += setting.torus_rotation
 }
 animate()
 
