@@ -67,7 +67,7 @@ function checkDevice(){
     glare: true,
     'max-glare': 1,
     });
-    VanillaTilt.init(document.querySelector(".more"), {
+    VanillaTilt.init(document.querySelectorAll(".more"), {
       max: 20,
       speed: 400,
       axis: null
@@ -152,6 +152,23 @@ function checkerCamPos(){
     return { z: 4, x: -0.8, y: 0}
   }
 }
+
+
+
+
+
+
+//! Click Events
+
+//*Play Now
+const playButton = document.getElementById('play')
+playButton.addEventListener("click",()=>{
+  console.log("Playing..")
+    camera.rotation.copy(initialCameraRotation)
+    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 2000);
+    document.getElementById('pagefront').style.zIndex = "-999"
+})
+
 
 
 

@@ -39,6 +39,10 @@ body{
   background-color: white;
 }
 
+.contrast-color{
+  color: rgba(220, 9, 9, 0.291);
+  font-weight: bold ;
+}
 
 .cont-cont{
   height: 140px;
@@ -149,12 +153,17 @@ body{
 @media (max-width:400px) {
 
   .more{
-    border-radius: 20px;
+    margin-top: 55px;
+    border-radius: 12px;
+    scale: 1.1;
     width: 150px;
     padding: 8px;
     backdrop-filter: blur(30px);
   }
   
+  .play{
+    margin-top: 10px;
+  }
   .cont-cont{
     scale: 0.79;
     margin-left: 30px;
