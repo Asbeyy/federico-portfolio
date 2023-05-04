@@ -105,19 +105,23 @@ body{
 }
 
 .more{
-  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
   border-radius: 20px;
-  width: 300px;
+  width: 347px;
   border: none;
   text-align: center;
   padding: 20px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(30px);
   transition: 800ms ;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   background-color: rgba(2, 2, 107, 0.221);
+}
+
+.play{
+  background-color: rgba(255, 192, 203, 0.317);
 }
 
 .more:hover{
@@ -143,11 +147,20 @@ body{
 
 
 @media (max-width:400px) {
+
+  .more{
+    border-radius: 20px;
+    width: 150px;
+    padding: 8px;
+    backdrop-filter: blur(30px);
+  }
+  
   .cont-cont{
     scale: 0.79;
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: 60px;
+    margin-top: calc(100vh - 422px - 150px);
+    scale: 1.05;
     position: relative;
     top: 30px;
     text-align: center;
@@ -171,10 +184,19 @@ body{
 
 
 @media (min-width:400px) and (max-width:650px) {
+
+  .more{
+    border-radius: 20px;
+    width: 272px;
+    padding: 25px;
+    backdrop-filter: blur(30px);
+    font-size: 17px;
+  }
+
   .cont-cont{
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: calc(120px + 2vw);
+    margin-top: calc(100vh - 422px - 200px);
     position: relative;
     top: 30px;
     text-align: center;
@@ -200,6 +222,15 @@ body{
 
 
 @media (min-width:650px) and (max-width:900px) {
+
+  .more{
+    border-radius: 20px;
+    width: 310px;
+    padding: 25px;
+    backdrop-filter: blur(30px);
+    font-size: 18px;
+  }
+
   .cont-cont{
     height: 140px;
   margin-left: calc(-180px - 1vw);

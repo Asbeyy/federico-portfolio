@@ -8,13 +8,13 @@ import VanillaTilt from 'vanilla-tilt';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  45,window.innerWidth/window.innerHeight,0.1,1000
+  45,screen.width/screen.height,0.1,1000
   )
 
 const renderer = new WebGLRenderer({
   alpha: true
 })
-renderer.setSize(window.innerWidth,window.innerHeight);
+renderer.setSize(screen.width,screen.height);
 document.body.appendChild(renderer.domElement)
 
 
@@ -100,10 +100,13 @@ window.onload = function() {
 
 //! Camera Animaion (Play with the torus)
 
+const initialCameraRotation = new THREE.Euler().copy(camera.rotation); // Store the initial rotation value
+
 //On click of key letter "P"
 window.addEventListener("keydown",(e) => {
   if(e.key === "p"){
     console.log("TRIGGER")
+    camera.rotation.copy(initialCameraRotation)
     moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 2000);
     document.getElementById('pagefront').style.zIndex = "-999"
   }
@@ -113,6 +116,7 @@ window.addEventListener("keydown",(e) => {
 window.addEventListener("keydown",(e) => {
   if(e.key === "o"){
     console.log("NOT-TRIGGER")
+    camera.rotation.copy(initialCameraRotation)
     moveCameraSmoothly(camera,checkerCamPos(), 2000);
     document.getElementById('pagefront').style.zIndex = "999"
   }
