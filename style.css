@@ -8,6 +8,17 @@ body{
   align-items: center;
   background-color: #bfc8de;
   font-family: 'Maven Pro', sans-serif;
+  cursor: default;
+}
+
+header{
+  width: 100%;
+  display: flex;
+  padding-left: 20px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
 }
 
 .pagefront{
@@ -37,7 +48,7 @@ body{
 }
 
 .br{
-  background-color: rgba(103, 99, 188, 0.536)
+  background: linear-gradient( rgba(103, 99, 188, 0.536),  #bfc8de ) 
 }
 
 .contrast-color{
@@ -147,6 +158,20 @@ body{
 .more:hover{
 }
 
+.menu-outline{
+  font-size: 128px;
+  color: white;
+  scale: 0.4;
+  border: solid rgb(255, 255, 255) 7px;
+  border-radius: 30px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.menu-outline:hover{
+  border: solid rgba(2, 2, 107, 0.221) 7px;
+}
+
 
 .line{
   position: relative;
@@ -154,9 +179,12 @@ body{
   width:250px;
   height: 250px;
   background-color: rgb(6, 6, 6);
-  transform: translateY(300px) rotate(15deg);
   border-radius: 20px;
   z-index: -99;
+}
+
+.li-one{
+  transform: translateY(300px) rotate(15deg);
 }
 
 
@@ -188,7 +216,9 @@ body{
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  color: rgba(253, 253, 253, 0.532);
+  color: rgba(255, 255, 255, 0.954);
+  margin-top: 80px;
+  margin-bottom: 150px;
 }
 
 
@@ -243,6 +273,12 @@ body{
   .personal-info{
     width: 90%;
   }
+
+
+.title-main{
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
 
  
   
