@@ -104,13 +104,15 @@ function onWindowResize() {
 }
 
 window.addEventListener('resize', onWindowResize);
-window.onload = function() {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  });
-}
+
+//!Scroll to top when loading the page
+// window.onload = function() {
+//   window.scroll({
+//     top: 0,
+//     left: 0,
+//     behavior: 'smooth'
+//   });
+// }
 
 
 

@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap');
+html{
+  scroll-behavior: smooth;
+
+}
 
 body{
   margin: 0;
@@ -9,6 +13,7 @@ body{
   background-color: #bfc8de;
   font-family: 'Maven Pro', sans-serif;
   cursor: default;
+  overflow-x: hidden;
 }
 
 header{
@@ -48,7 +53,7 @@ header{
 }
 
 .br{
-  background: linear-gradient(  #bfc8de , #bfc8de , rgba(103, 99, 188, 0.536) ) 
+  background:  #bfc8de
 }
 
 .contrast-color{
@@ -62,10 +67,10 @@ header{
   width:1500px;
   height: 10px;
   background-color: rgb(3, 3, 3);
-  transform: translateY(40px) translateX(-230px) rotate(90deg);
+  transform: translateY(0px) translateX(-230px) rotate(90deg);
   border-radius: 20px;
   z-index: -99;
-  filter: blur(10px);
+  filter: blur(18px);
 }
 
 
@@ -223,7 +228,7 @@ header{
 
 
 footer{
-  height: 60px;
+  height: 100px;
   background-color: rgba(103, 99, 188, 0.536);
   display: flex;
   justify-content: center;
@@ -231,6 +236,8 @@ footer{
   flex-direction: row;
   gap: 50px;
   font-size: 18px;
+
+  background: linear-gradient(  #bfc8de ,rgba(103, 99, 188, 0.273) ) ;
 
   color: white;
 }
@@ -243,14 +250,42 @@ footer{
   color: white;
 }
 
-.selectors-footer div{
-
+.selectors-footer a{
+  color: white;
+  text-decoration: none;
   transition: 300ms;
 }
 
-.selectors-footer div:hover{
+.selectors-footer a:hover{
   scale: 1.15;
 }
+
+
+.canv-test{
+  position: relative;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.canv-test div{
+  width: 700px;
+  text-align: center;
+}
+
+.canv-test canvas{
+  border-radius: 10px;
+}
+
+.threedelem{
+ background: linear-gradient(#bfc8de ,rgba(29, 20, 197, 0.273),#bfc8de);
+}
+
 
 
 
