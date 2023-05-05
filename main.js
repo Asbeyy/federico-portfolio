@@ -33,11 +33,12 @@ const renderer = new WebGLRenderer({
 renderer.setSize(screen.width,screen.height);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.LinearToneMapping
 document.body.appendChild(renderer.domElement)
 
+console.log("do")
 
-
-
+const mesh = new THREE.Mesh()
 
 
 //!! Geometries
@@ -141,6 +142,10 @@ window.addEventListener("keydown",(e) => {
 })
 
 
+const controlsTarget = new THREE.Vector3();
+const controlsPosition = new THREE.Vector3();
+
+
 function moveCameraSmoothly(camera, newPosition, duration) {
   const currentPos = camera.position.clone();
   const targetPos = new THREE.Vector3(newPosition.x, newPosition.y, newPosition.z);
@@ -165,6 +170,8 @@ function activateTorus(){
   console.log("TRIGGER")
   camera.rotation.copy(initialCameraRotation)
   moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
+  controlsTarget.copy(controls.target);
+  controlsPosition.copy(controls.object.position);
   document.getElementById('pagefront').style.zIndex = "-999"
   document.getElementById('gui').style.transform = 'translateY(0px)'
   setTimeout(()=>{
@@ -172,12 +179,30 @@ function activateTorus(){
   document.getElementById('gui').style.transform = 'translateY(-200px)'
   },5000)
 }
-function deactivateTorus(){
-  console.log("NOT-TRIGGER")
-  camera.rotation.copy(initialCameraRotation)
-  moveCameraSmoothly(camera,checkerCamPos(), 900);
-  document.getElementById('pagefront').style.zIndex = "999"
+function deactivateTorus() {
+  // save the current camera position
+  const currentPos = camera.position.clone();
+
+  // reset the controls target and update the controls
+  controls.target.set(0, 0, 0);
+  controls.update();
+
+  // reset the camera rotation to its initial value
+  camera.rotation.copy(initialCameraRotation);
+
+  // smoothly move the camera back to its original position
+  const targetPosition = checkerCamPos();
+  const duration = 900;
+  moveCameraSmoothly(camera, targetPosition, duration);
+
+  // set the camera position to its saved value
+  camera.position.copy(currentPos);
+
+  // reset the GUI and pagefront elements
+  document.getElementById('pagefront').style.zIndex = "999";
 }
+
+
 function checkerCamPos(){
   if (window.innerWidth <= 650){
     //Phone Settings
