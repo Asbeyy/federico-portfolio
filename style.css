@@ -43,12 +43,12 @@ header{
 .gr{
   display: flex;
   flex-direction: column;
-  background: linear-gradient( #bfc8de , rgba(103, 99, 188, 0.536)) 
+  background: #bfc8de
 
 }
 
 .br{
-  background: linear-gradient( rgba(103, 99, 188, 0.536),  #bfc8de ) 
+  background: linear-gradient(  #bfc8de , #bfc8de , rgba(103, 99, 188, 0.536) ) 
 }
 
 .contrast-color{
@@ -180,7 +180,7 @@ header{
   height: 250px;
   background-color: rgb(6, 6, 6);
   border-radius: 20px;
-  z-index: -99;
+  z-index: 0;
 }
 
 .li-one{
@@ -219,6 +219,37 @@ header{
   color: rgba(255, 255, 255, 0.954);
   margin-top: 80px;
   margin-bottom: 150px;
+}
+
+
+footer{
+  height: 60px;
+  background-color: rgba(103, 99, 188, 0.536);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 50px;
+  font-size: 18px;
+
+  color: white;
+}
+
+
+.selectors-footer{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: white;
+}
+
+.selectors-footer div{
+
+  transition: 300ms;
+}
+
+.selectors-footer div:hover{
+  scale: 1.15;
 }
 
 
@@ -290,6 +321,23 @@ header{
   margin-bottom: 20px;
 }
 
+.bar-sep{
+  display: none;
+}
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.selectors-footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}
  
   
   .line{display: none;}
