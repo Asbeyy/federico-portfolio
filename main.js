@@ -91,6 +91,7 @@ function checkDevice(){
       speed: 400,
       axis: null
     });
+    
   }
 }
 checkDevice()
@@ -166,13 +167,16 @@ function activateTorus(){
   moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
   document.getElementById('pagefront').style.zIndex = "-999"
   document.getElementById('gui').style.transform = 'translateY(0px)'
+  setTimeout(()=>{
+    
+  document.getElementById('gui').style.transform = 'translateY(-200px)'
+  },5000)
 }
 function deactivateTorus(){
   console.log("NOT-TRIGGER")
   camera.rotation.copy(initialCameraRotation)
   moveCameraSmoothly(camera,checkerCamPos(), 900);
   document.getElementById('pagefront').style.zIndex = "999"
-  document.getElementById('gui').style.transform = 'translateY(-190px)'
 }
 function checkerCamPos(){
   if (window.innerWidth <= 650){

@@ -69,7 +69,7 @@ header{
   background-color: rgba(164, 135, 41, 0.273);
   box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
-  position: absolute;
+  position: fixed;
   top: 4%;
   left:calc(50% - 150px);
   display: flex;
@@ -80,7 +80,8 @@ header{
   border-radius: 10px;
   z-index: 9999;
   transition: 2000ms;
-  transform: translateY(-190px);
+  transform: translateY(-200px);
+  user-select: none;
 }
 
 .highlight3{
