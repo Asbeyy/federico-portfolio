@@ -19,6 +19,9 @@ let setting = {
 
 
 
+
+
+
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   45,screen.width/screen.height,0.1,1000
@@ -38,6 +41,7 @@ document.body.appendChild(renderer.domElement)
 
 
 //!! Geometries
+
 const thorusGeometry = new THREE.TorusKnotGeometry(.5,.22,200,200)
 
 const textureLoader = new THREE.TextureLoader()
@@ -75,8 +79,7 @@ function checkDevice(){
     camera.position.x = -0.8
     camera.position.y = 0
 
-    //! Tilt for cards
-
+    // Tilt for cards
     VanillaTilt.init(document.querySelectorAll('.card'), {
     max: 25,
     speed: 400,
@@ -105,14 +108,17 @@ function onWindowResize() {
 
 window.addEventListener('resize', onWindowResize);
 
+
+
 //!Scroll to top when loading the page
-// window.onload = function() {
-//   window.scroll({
-//     top: 0,
-//     left: 0,
-//     behavior: 'smooth'
-//   });
-// }
+
+ window.onload = function() {
+   window.scroll({
+     top: 0,
+     left: 0,
+     behavior: 'auto'
+   });
+ }
 
 
 
@@ -123,22 +129,16 @@ const initialCameraRotation = new THREE.Euler().copy(camera.rotation); // Store 
 //On click of key letter "P"
 window.addEventListener("keydown",(e) => {
   if(e.key === "p"){
-    console.log("TRIGGER")
-    camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
-    document.getElementById('pagefront').style.zIndex = "-999"
+    activateTorus()
   }
 })
-
 //Onclick of letter "O"
 window.addEventListener("keydown",(e) => {
   if(e.key === "o"){
-    console.log("NOT-TRIGGER")
-    camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,checkerCamPos(), 900);
-    document.getElementById('pagefront').style.zIndex = "999"
+   deactivateTorus() 
   }
 })
+
 
 function moveCameraSmoothly(camera, newPosition, duration) {
   const currentPos = camera.position.clone();
@@ -160,7 +160,20 @@ function moveCameraSmoothly(camera, newPosition, duration) {
 
   animate();
 }
-
+function activateTorus(){
+  console.log("TRIGGER")
+  camera.rotation.copy(initialCameraRotation)
+  moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
+  document.getElementById('pagefront').style.zIndex = "-999"
+  document.getElementById('gui').style.transform = 'translateY(0px)'
+}
+function deactivateTorus(){
+  console.log("NOT-TRIGGER")
+  camera.rotation.copy(initialCameraRotation)
+  moveCameraSmoothly(camera,checkerCamPos(), 900);
+  document.getElementById('pagefront').style.zIndex = "999"
+  document.getElementById('gui').style.transform = 'translateY(-190px)'
+}
 function checkerCamPos(){
   if (window.innerWidth <= 650){
     //Phone Settings
@@ -181,10 +194,17 @@ function checkerCamPos(){
 //*Play Now
 const playButton = document.getElementById('play')
 playButton.addEventListener("click",()=>{
-  console.log("Playing..")
-    camera.rotation.copy(initialCameraRotation)
-    moveCameraSmoothly(camera,{ x: 0, y: 0, z: 4 }, 900);
-    document.getElementById('pagefront').style.zIndex = "-999"
+  activateTorus()
+})
+
+//*My Work
+document.getElementById('work').addEventListener('click',()=>{
+  window.location.href = '#my-work'
+})
+
+//*Gui
+document.getElementById('gui').addEventListener("click",()=>{
+  deactivateTorus()
 })
 
 
